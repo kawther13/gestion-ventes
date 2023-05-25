@@ -1,0 +1,29 @@
+package com.kawthar.pfe.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Devis {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+private Date dateDevis;
+private int totalDevis;
+private int remise;
+
+@ManyToOne
+private Client client;
+}
